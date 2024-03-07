@@ -86,7 +86,7 @@ tr, td {
 }
 
 #search_field {
-    border: 2px solid rgb(254, 254, 0);
+    border: 2px solid #ffcc33;
     border-radius: 5px;
     padding: 5px;
 }
