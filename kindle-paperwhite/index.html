@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+
+
+    <title>Kindle Paperwhite Simulation</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    
+<div class="container d-flex justify-content-center align-items-center py-5">
+    <div class="kindle">
+      <div class="screen">
+        <!-- Page Controls-->
+        <div class="overlay w-100 h-100 d-none"></div>
+        <div class="controls w-100 h-100 d-none">
+          <div class="top d-flex justify-content-center align-items-center">Tap here to see menu</div>
+          <div class="left d-flex justify-content-center align-items-center">Previous</div>
+          <div class="center d-flex justify-content-center align-items-center">Tap here to exit menu</div>
+          <div class="right d-flex justify-content-center align-items-center">Next</div>
+        </div>
+        <!-- Main Menu-->
+        <div class="main-menu w-100">
+          <div class="notification-bar d-flex justify-content-between px-3">
+            <p>Shabby's Kindle</p>
+            <div class="d-flex justify-content-between align-items-center"><i class="fas fa-wifi mr-2 text-medium"></i>
+              <p>80%</p><i class="fas fa-battery-three-quarters mx-2"></i>
+              <p>9:36 PM</p>
+            </div>
+          </div>
+          <!-- Settings Dropdown-->
+          <div class="settings-dropdown w-100 d-none">
+            <div class="d-flex px-4 py-2 justify-content-between options border-bottom border-top">
+              <div class="d-flex flex-column align-items-center justify-content-center p-2"><i class="fas fa-plane mb-2"></i><span class="text-medium">Airplane Mode</span></div>
+              <div class="d-flex flex-column align-items-center justify-content-center p-2"><i class="fas fa-sync-alt mb-2"></i><span class="text-medium">Sync Your Kindle </span></div>
+              <div class="d-flex flex-column align-items-center justify-content-center p-2"><i class="fas fa-cog mb-2"></i><span class="text-medium">All Settings </span></div>
+            </div>
+            <div class="w-100 border-bottom p-3">
+              <div class="d-flex justify-content-between">
+                <p class="text-small text-uppercase text-strong">Light</p>
+                <p class="text-small text-uppercase text-strong border px-1">Max</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center"><i class="far fa-sun"></i>
+                <hr class="mx-2"/><i class="fas fa-sun"></i>
+              </div>
+            </div>
+          </div>
+          <!-- Navigation Bar-->
+          <div class="navigation-bar d-flex justify-content-between border-top border-bottom">
+            <div class="d-flex"><a class="d-flex flex-column align-items-center py-1 home-button"><i class="fas fa-home"></i><span class="text-small text-strong">home</span></a><a class="d-flex flex-column align-items-center py-1 back-button"><i class="fas fa-arrow-left"></i><span class="text-small text-strong">back</span></a><a class="d-flex flex-column align-items-center py-1" onclick="withDropdown('settings-dropdown')"><i class="fas fa-cog"></i><span class="text-small text-strong">settings</span></a><a class="d-flex flex-column align-items-center py-1"><i class="fab fa-goodreads"></i><span class="text-small text-strong">goodreads</span></a><a class="d-flex flex-column align-items-center py-1"><i class="fas fa-shopping-cart"></i><span class="text-small text-strong">shop</span></a></div>
+            <div class="border-left border-right d-flex align-items-center pl-3 pr-5"><i class="fas fa-search mr-2"></i><span class="text-muted">
+                <input class="search" type="text" placeholder="Search"/></span></div>
+            <div class="d-flex align-items-center"><i class="fas fa-ellipsis-v text-center h-100 d-flex align-items-center justify-content-center menu-button" onclick="withDropdown('menu-dropdown')"></i>
+              <div class="menu-dropdown border d-none">
+                <ul class="p-0 m-0">
+                  <li class="py-2 px-3">Your Library</li>
+                  <li class="py-2 px-3">Your Reading Lists</li>
+                  <li class="py-2 px-3">Kindle Store</li>
+                  <li class="py-2 px-3">Goodreads</li>
+                  <li class="py-2 px-3">Kindle FreeTime</li>
+                  <li class="py-2 px-3">Vocabulary Builder</li>
+                  <li class="py-2 px-3">Experimental Browser</li>
+                  <li class="py-2 px-3 border-top border-bottom">Settings</li>
+                  <li class="py-2 px-3">View Special Offers</li>
+                  <li class="py-2 px-3">Create New Collection</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Page Menu-->
+          <div class="page-menu w-100 border-bottom d-none">
+            <div class="d-flex justify-content-between">
+              <p class="d-flex align-items-center py-2 px-3 text-uppercase text-strong" onclick="withDropdown('page-display-dropdown')"><i class="far fa-file-alt"></i><span class="mx-2">Page Display</span><i class="fas fa-angle-down"></i></p>
+              <div class="d-flex">
+                <p class="text-uppercase py-2 px-3 text-strong">Go To</p><i class="far fa-bookmark py-2 px-3"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Page Menu Bottom-->
+        <div class="page-menu-bottom w-100 d-none">
+          <div class="h-100 border-top d-flex flex-column justify-content-center align-items-center">
+            <p class="text-strong">Chapter 1</p>
+            <p class="text-small my-2">Loc 320 of 5047 | 3 mins left in chapter | 6%</p>
+            <div class="d-flex"><i class="fas fa-columns py-1 px-4"></i><i class="fas fa-th py-1 px-4"></i></div>
+          </div>
+        </div>
+        <!-- Page Display Dropdown-->
+        <div class="page-display-dropdown border d-none">
+          <ul>
+            <li class="px-3 py-2">Font & Page Settings<i class="fas fa-angle-right ml-4"></i></li>
+            <li class="px-3 py-2 border-bottom d-flex align-items-center"><i class="far fa-file-alt mr-3"></i>
+              <div class="d-flex justify-content-between w-100 align-items-center"><span>Custom</span><i class="fas fa-check"></i></div>
+            </li>
+            <li class="px-3 py-2"> <i class="far fa-file-alt mr-3"></i><span>Compact</span></li>
+            <li class="px-3 py-2"><i class="far fa-file-alt mr-3"></i><span>Standard</span></li>
+            <li class="px-3 py-2"><i class="far fa-file-alt mr-3"></i><span>Large</span></li>
+          </ul>
+        </div>
+        <!-- Homepage-->
+        <div class="homepage">
+          <div class="library mx-3 pt-2 pb-4 d-flex border-bottom">
+            <div class="left pr-3">
+              <p class="text-uppercase text-medium text-strong mb-2">Your Library » </p>
+              <div class="d-flex"><img class="main view-book pluto" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549463565/pluto-cover.png" draggable="false"/>
+                <div class="d-flex flex-column ml-2"><img class="mb-2 black-hole view-book" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549463565/blackhole-cover.png" draggable="false"/><img class="astrophysics view-book" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549463565/astro-cover.png" draggable="false"/></div>
+              </div>
+            </div>
+            <div class="right">
+              <p class="text-strong text-medium text-uppercase mb-2">Your Reading List »</p>
+              <div class="border-bottom pb-3 pr-3 mb-3 view-book astrophysics">
+                <p class="text-serif">Astrophysics for People in a Hurry</p>
+                <p class="text-small text-serif text-italic">Neil deGrasse Tyson</p>
+              </div>
+              <div class="border-bottom pb-3 pr-3 mb-3 view-book black-hole">
+                <p class="text-serif">Death by Black Hole: And Other Cosmic...</p>
+                <p class="text-small text-serif text-italic">Neil deGrasse Tyson</p>
+              </div>
+              <div class="border-bottom pb-3 pr-3 view-book pluto">
+                <p class="text-serif">The Pluto Files: The Rise and Fall of...</p>
+                <p class="text-small text-serif text-italic">Neil deGrasse Tyson</p>
+              </div>
+            </div>
+          </div>
+          <div class="py-2 d-flex flex-column border-bottom mx-3">
+            <p class="text-uppercase text-medium text-strong mb-2">Most Wished for Kindle Books »</p><img class="w-100" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549698728/Kindle/most-wished.png" draggable="false"/>
+          </div>
+          <div class="py-2 d-flex flex-column border-bottom mx-3">
+            <p class="text-uppercase text-medium text-strong mb-2">Most Read Non-fiction Books on Amazon Charts »</p><img class="w-100" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549698728/Kindle/non-fiction.png" draggable="false"/>
+          </div>
+          <div class="py-2 d-flex flex-column border-bottom mx-3 mb-5">
+            <p class="text-uppercase text-medium text-strong mb-2">Best Sellers in Kindle Store »</p><img class="w-100" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549698728/Kindle/best-seller.png" draggable="false"/>
+          </div>
+        </div>
+        <!-- Book: The Pluto Files-->
+        <div class="pluto-book book w-100 h-100 d-none"><img class="page active" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549690199/Kindle/pluto-1.png" draggable="false"/><img class="page" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549690199/Kindle/pluto-2.png" draggable="false"/><img class="page" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549690199/Kindle/pluto-3.png" draggable="false"/><img class="page" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549690199/Kindle/pluto-4.png" draggable="false"/><img class="page" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549690199/Kindle/pluto-5.png" draggable="false"/></div>
+        <!-- Book: Astrophysics for People in a Hurry-->
+        <div class="astro-book book w-100 h-100 d-none"><img class="page active" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549690199/Kindle/astro-1.png" draggable="false"/><img class="page" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549690199/Kindle/astro-1.png" draggable="false"/><img class="page" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549690199/Kindle/astro-3.png" draggable="false"/><img class="page" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549690199/Kindle/astro-4.png" draggable="false"/><img class="page" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549690199/Kindle/astro-5.png" draggable="false"/></div>
+        <!-- Book: Death by Black Hole-->
+        <div class="black-hole-book book w-100 h-100 d-none"><img class="page active" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549690199/Kindle/black-hole-1.png" draggable="false"/><img class="page" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549690199/Kindle/black-hole-2.png" draggable="false"/><img class="page" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1549690199/Kindle/black-hole-3.png" draggable="false"/></div>
+      </div>
+    </div>
+  </div>
+  <div class="bg"></div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

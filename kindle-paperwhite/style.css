@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  li,
+  p,
+  span {
+    margin: 0 !important;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 12px;
+  }
+  
+  li,
+  li span {
+    list-style-type: none;
+    font-size: 14px;
+  }
+  
+  .text-small {
+    font-size: 9px;
+  }
+  
+  .text-medium {
+    font-size: 10px;
+  }
+  
+  .text-strong {
+    font-weight: 700 !important;
+  }
+  
+  .text-italic {
+    font-style: italic;
+  }
+  
+  .text-serif {
+    font-family: "Noto Serif", serif;
+  }
+  
+  .absolute {
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .kindle {
+    z-index: 9;
+    height: 850px;
+    min-width: 610px;
+    padding: 80px 0 0 0;
+    background: #222;
+    border: 8px ridge #333;
+    border-radius: 30px;
+  }
+  .kindle::after {
+    content: "Kindle";
+    display: flex;
+    justify-content: center;
+    margin-top: -10px;
+    font-weight: 300;
+    font-size: 30px;
+    font-family: "Ubuntu", sans-serif;
+    color: #ccc;
+  }
+  .kindle .screen {
+    position: relative;
+    width: 490px;
+    height: 655px;
+    margin: 0 auto 40px auto;
+    background-color: #fff;
+    border: 8px inset #222;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .kindle .screen .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0);
+  }
+  .kindle .screen .controls {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: yellow;
+    opacity: 1;
+  }
+  .kindle .screen .controls .top {
+    width: 100%;
+    height: 80px;
+  }
+  .kindle .screen .controls .center {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .kindle .screen .controls .left,
+  .kindle .screen .controls .right {
+    width: 100px;
+    height: 100%;
+  }
+  .kindle .screen .controls .left {
+    float: left;
+  }
+  .kindle .screen .controls .right {
+    float: right;
+  }
+  .kindle .screen .controls .top:hover,
+  .kindle .screen .controls .left:hover,
+  .kindle .screen .controls .right:hover,
+  .kindle .screen .controls .center:hover {
+    cursor: pointer;
+  }
+  .kindle .settings-dropdown {
+    position: absolute;
+    background: #fff;
+  }
+  .kindle .settings-dropdown hr {
+    width: 100%;
+    border: none;
+    border-top-style: dashed;
+    border-width: 5px;
+    color: #222;
+  }
+  .kindle .settings-dropdown .options div i {
+    font-size: 25px;
+  }
+  .kindle .settings-dropdown .options div:hover {
+    background: #333;
+    color: #fff !important;
+    cursor: pointer;
+  }
+  .kindle .screen .main-menu {
+    background: #fff;
+  }
+  .kindle .screen .main-menu li:hover,
+  .kindle .screen .main-menu .page-menu p:hover {
+    background: #333;
+    color: #fff !important;
+  }
+  .kindle .screen .main-menu .navigation-bar .search {
+    all: unset;
+    width: 55px;
+  }
+  .kindle .screen .main-menu .navigation-bar a {
+    width: 57px;
+  }
+  .kindle .screen .main-menu .navigation-bar .menu-button {
+    width: 45px;
+  }
+  .kindle .screen .main-menu .navigation-bar .menu-dropdown {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #fff;
+    overflow: hidden;
+  }
+  .kindle .screen .main-menu .navigation-bar .menu-button:hover,
+  .kindle .screen .main-menu .navigation-bar a:hover,
+  .kindle .screen .main-menu .navigation-bar .menu-dropdown li:hover {
+    background: #333;
+    color: #fff !important;
+    cursor: pointer;
+  }
+  .kindle .page-menu-bottom {
+    z-index: 999;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    background: #fff;
+  }
+  .kindle .page-menu-bottom div i {
+    border: 1.5px solid #222;
+    border-radius: 2px;
+  }
+  .kindle .page-menu-bottom div i:last-child {
+    color: #555;
+    border-color: #555;
+  }
+  .kindle .page-display-dropdown {
+    z-index: 999;
+    top: 90px;
+    position: absolute;
+    background: #fff;
+  }
+  .kindle .page-display-dropdown ul li:hover {
+    background: #333;
+    color: #fff !important;
+    cursor: pointer;
+  }
+  .kindle .screen .homepage {
+    width: 97%;
+    height: 585px;
+    overflow-y: auto;
+  }
+  .kindle .screen .homepage .library .left img {
+    height: 120px;
+    border: 1px solid black;
+  }
+  .kindle .screen .homepage .library .left p,
+  .kindle .screen .homepage .library .left img {
+    cursor: pointer;
+  }
+  .kindle .screen .homepage .library .left img.main {
+    height: 250px;
+  }
+  .kindle .screen .homepage .library .right p {
+    width: 120px;
+    cursor: pointer;
+  }
+  .kindle .screen .book .page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  .kindle .screen .book .page.active {
+    z-index: 2;
+    opacity: 1;
+  }
+  .kindle .screen .book img {
+    width: 100%;
+  }
+  
+  .bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1585773818428-b50bebdc2344?q=80&w=1810&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center;
+    background-size: cover;
+  }
+  .bg a {
+    color: #fff;
+    text-decoration: none;
+    border-radius: 100px;
+    background: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+  }
+  
+  .homepage::-webkit-scrollbar-track {
+    margin: 40px 0;
+    background-color: #ccc;
+    border-radius: 100px;
+  }
+  
+  .homepage::-webkit-scrollbar {
+    width: 7px;
+    background-color: #fff;
+  }
+  
+  .homepage::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 10px;
+  }
+  
+  .container {
+    min-height: 100vh;
+  }
