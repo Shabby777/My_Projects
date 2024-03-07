@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Madimi+One&family=Oswald&family=Roboto+Condensed&display=swap');
 
 :root {
     --black:#000000;
@@ -7,19 +7,22 @@
 }
 
 body,h1,h2,h3,h4,h5,h6,p {
-    margin: 0px;
-    padding: 0px;
+    /* margin: 0px;
+    padding: 0px; */
     font-family: 'Roboto Mono', monospace;
 }
 
 body {
     background-color: var(--black);
     color: var(--white);
-    padding: 10px 10px;
+    padding: 0px 20px;
 }
  
 .container {
     padding: 1rem;
+    font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .mt-3 {
@@ -40,6 +43,7 @@ input {
 input[type=submit] {
     cursor: pointer;
     border-radius: 5px;
+    margin-left: 10px;
 }
 
 input[type=submit]:hover {
