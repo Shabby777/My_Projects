@@ -1,0 +1,3 @@
+# Leaderboard Project
+This project keeps track of the players/people in a particular sport or a competetive game in this virtual leaderboard!
+Try it out to find out more...
