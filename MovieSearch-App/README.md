@@ -6,7 +6,7 @@ Search for any movie you would like or know about and see it on display with it'
 
 -----------------------------------------------
 
-Deploy Link :
+Deploy Link : https://shabby777.github.io/My_Projects/MovieSearch-App/index.html
 
 
 
