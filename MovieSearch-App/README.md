@@ -12,7 +12,7 @@ Deploy Link :
 
 Tech used:
 
-HTML 
-CSS 
-Javascript 
-debouncing 
+HTML  
+CSS  
+Javascript  
+debouncing
