@@ -1,0 +1,1718 @@
+@import url("../cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:500,700,800,400");
+
+body {
+    /* margin: 10px; */
+    padding: 0;
+    margin: 0;
+}
+
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  /* padding: 5px; */
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.component-wrapper a {
+  display: contents;
+  pointer-events: auto;
+  text-decoration: none;
+}
+
+.component-wrapper * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.component-wrapper a *,
+.component-wrapper input,
+.component-wrapper video,
+.component-wrapper iframe {
+  pointer-events: auto;
+}
+
+.component-wrapper.not-ready,
+.component-wrapper.not-ready * {
+  visibility: hidden !important;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.full-width-a {
+  width: 100%;
+}
+
+.full-height-a {
+  height: 100%;
+}
+
+.container-center-vertical {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  pointer-events: none;
+}
+
+.container-center-vertical > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.auto-animated div {
+  --z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+.auto-animated input {
+  --z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+  opacity: 1;
+}
+
+.overlay-base {
+  display: none;
+  height: 100%;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.overlay-base.animate-appear {
+  align-items: center;
+  animation: reveal 0.3s ease-in-out 1 normal forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+}
+
+.overlay-base.animate-disappear {
+  animation: reveal 0.3s ease-in-out 1 reverse forwards;
+  display: block;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.overlay-base.animate-disappear * {
+  pointer-events: none;
+}
+
+@keyframes reveal {
+  from { opacity: 0 }
+ to { opacity: 1 }
+}
+
+.animate-nodelay {
+  animation-delay: 0s;
+}
+
+.align-self-flex-start {
+  align-self: flex-start;
+}
+
+.align-self-flex-end {
+  align-self: flex-end;
+}
+
+.align-self-flex-center {
+  align-self: flex-center;
+}
+
+.valign-text-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.valign-text-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+input:focus {
+  outline: none;
+}
+
+.listeners-active,
+.listeners-active * {
+  pointer-events: auto;
+}
+
+.hidden,
+.hidden * {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.smart-layers-pointers,
+.smart-layers-pointers * {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.listeners-active-click,
+.listeners-active-click * {
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+:root { 
+  --black: #000000;
+  --color-1: #c1dcdc;
+  --color-2: #1e1e1e80;
+  --color-3: #1e1e1ebf;
+  --color-4: #1e1e1e80;
+  --eerie-black: #1e1e1e;
+  --white: #ffffff;
+ 
+  --font-size-l: 24px;
+  --font-size-m: 18px;
+  --font-size-s: 12px;
+  --font-size-xl: 32px;
+  --font-size-xxl: 64px;
+ 
+  --font-family-poppins: "Poppins", Helvetica;
+  --font-family-quella-regular: "Quella-Regular", Helvetica;
+}
+.poppins-medium-eerie-black-18px {
+  color: var(--color-2);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.poppins-bold-eerie-black-18px {
+  color: var(--eerie-black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.poppins-normal-eerie-black-18px {
+  color: var(--color-2);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.poppins-medium-eerie-black-18px-2 {
+  color: var(--eerie-black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.poppins-bold-eerie-black-32px {
+  color: var(--eerie-black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.poppins-bold-black-18px {
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 700;
+}
+
+:root {
+}
+
+
+/* screen - final-design */
+
+.final-design {
+  background-color: var(--white);
+  height: 4016px;
+  overflow-x: hidden;
+  position: relative;
+  width: 1440px;
+  /* margin: 10px; */
+}
+
+.final-design .landing-page-7vbHAl {
+  background-color: var(--white);
+  height: 1280px;
+  left: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 1440px;
+}
+
+.final-design .puremind-8DoSKv {
+  background-color: transparent;
+  color: var(--eerie-black);
+  font-family: var(--font-family-quella-regular);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 96px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 43px;
+  width: auto;
+}
+
+.final-design .frame-1-8DoSKv {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  gap: 48px;
+  left: 334px;
+  position: absolute;
+  top: 48px;
+}
+
+.final-design .home-bqsspp {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .products-bqsspp {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .contacts-bqsspp {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .frame-2-8DoSKv {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  gap: 48px;
+  left: 1128px;
+  position: absolute;
+  top: 48px;
+}
+
+.final-design .cart-QEfPww {
+  background-color: transparent;
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.final-design .person-QEfPww {
+  background-color: transparent;
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.final-design .line-1-QEfPww {
+  background-color: transparent;
+  height: 24px;
+  object-fit: cover;
+  position: relative;
+  width: 1px;
+}
+
+.final-design .filter-right-QEfPww {
+  background-color: transparent;
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.final-design .frame-3-8DoSKv {
+  background-color: var(--color-1);
+  border-radius: 24px;
+  height: 512px;
+  left: 96px;
+  overflow: hidden;
+  position: absolute;
+  top: 123px;
+  width: 1248px;
+}
+
+.final-design .frame-9-x8eoPA {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 48px;
+  left: 48px;
+  position: absolute;
+  top: 48px;
+}
+
+.final-design .frame-7-tQW0wS {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.final-design .title-nXPfTw {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.00px;
+  line-height: 64px;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  width: 512px;
+}
+
+.final-design .frame-6-nXPfTw {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 48px;
+  position: relative;
+}
+
+.final-design .frame-4-WKDPv4 {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+}
+
+.final-design .x50-iw31hN {
+  background-color: transparent;
+  color: var(--eerie-black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .plant-species-iw31hN {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .line-2-WKDPv4 {
+  background-color: transparent;
+  height: 64px;
+  object-fit: cover;
+  position: relative;
+  width: 1px;
+}
+
+.final-design .frame-5-WKDPv4 {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+}
+
+.final-design .x100-3C53Ix {
+  background-color: transparent;
+  color: var(--eerie-black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .customers-3C53Ix {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .frame-8-tQW0wS {
+  background-color: var(--white);
+  height: 64px;
+  width: 449px;
+}
+
+.final-design .what-are-you-looking-for-34EXUY {
+  background-color: transparent;
+  height: auto;
+  left: 18px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 17px;
+  width: auto;
+}
+
+.final-design .rectangle-1-34EXUY {
+  background-color: var(--color-1);
+  border-radius: 12px;
+  height: 48px;
+  left: 393px;
+  position: absolute;
+  top: 8px;
+  width: 48px;
+}
+
+.final-design .search-34EXUY {
+  background-color: transparent;
+  height: 20px;
+  left: 407px;
+  position: absolute;
+  top: 22px;
+  width: 20px;
+}
+
+.final-design .rectangle-2-x8eoPA {
+  background-color: var(--eerie-black);
+  border-radius: 200px 200px 0px 200px;
+  height: 400px;
+  left: 726px;
+  position: absolute;
+  top: 123px;
+  width: 450px;
+}
+
+.final-design .unsplash_c-laaxa4-d-x8eoPA {
+  background-color: transparent;
+  height: 514px;
+  left: 781px;
+  object-fit: cover;
+  position: absolute;
+  top: 18px;
+  width: 411px;
+}
+
+.final-design .vector-186-x8eoPA {
+  background-color: transparent;
+  height: 86px;
+  left: 529px;
+  position: absolute;
+  top: 330px;
+  width: 183px;
+}
+
+.final-design .vector-187-x8eoPA {
+  background-color: transparent;
+  height: 174px;
+  left: 1134px;
+  position: absolute;
+  top: 12px;
+  width: 89px;
+}
+
+.final-design .frame-12-8DoSKv {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 24px;
+  left: 96px;
+  position: absolute;
+  top: 732px;
+}
+
+.final-design .frame-10-pdgpPg {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.final-design .best-selling-plants-XuHiW0 {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  width: 256px;
+}
+
+.final-design .easiest-way-to-healt-XuHiW0 {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: 196px;
+}
+
+.final-design .frame-11-pdgpPg {
+  align-items: center;
+  background-color: var(--color-1);
+  border-radius: 8px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  padding: 12px 24px;
+  position: relative;
+}
+
+.final-design .see-more-MF9H6r {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .frame-14-8DoSKv {
+  gap: 12px;
+  left: 352px;
+  position: absolute;
+  top: 731px;
+}
+
+.final-design .frame-9-Q9THRm {
+  background-color: transparent;
+  background-image: url(../cdn.animaapp.com/projects/660317d608e677eb00c6a86c/releases/660317f697ca4334a9c6990a/img/frame-9.svg);
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 12px;
+  height: 363px;
+  overflow: hidden;
+  position: relative;
+  width: 299.3333435058594px;
+}
+
+.final-design .frame-13-Q9THRm {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+}
+
+.final-design .natural-plants-QzUlLP {
+  margin-top: -1.00px;
+}
+
+.final-design .x140000-QzUlLP {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .frame-15-8DoSKv {
+  gap: 12px;
+  left: 699px;
+  position: absolute;
+  top: 731px;
+}
+
+.final-design .frame-8-DUK9w7 {
+  background-color: transparent;
+  background-image: url(../cdn.animaapp.com/projects/660317d608e677eb00c6a86c/releases/660317f697ca4334a9c6990a/img/frame-8.svg);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 363px;
+  width: 299.3333435058594px;
+}
+
+.final-design .frame-14-DUK9w7 {
+  flex: 0 0 auto;
+  gap: 7px;
+  position: relative;
+}
+
+.final-design .artificial-plants-cmgYx1 {
+  margin-top: -1.00px;
+}
+
+.final-design .x90000-cmgYx1 {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .frame-16-8DoSKv {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 12px;
+  left: 1047px;
+  position: absolute;
+  top: 731px;
+}
+
+.final-design .frame-7-5qo6gz {
+  background-image: url(../cdn.animaapp.com/projects/660317d608e677eb00c6a86c/releases/660317f697ca4334a9c6990a/img/frame-7.svg);
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 12px;
+  height: 363px;
+  overflow: hidden;
+  width: 299.3333435058594px;
+}
+
+.final-design .frame-15-5qo6gz {
+  flex: 0 0 auto;
+  gap: 7px;
+  position: relative;
+}
+
+.final-design .artificial-plants-uhuvEl {
+  margin-top: -1.00px;
+}
+
+.final-design .x350000-uhuvEl {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .moon-and-stars-8DoSKv {
+  height: 100px;
+  left: 670px;
+  top: 590px;
+  width: 100px;
+}
+
+.final-design .moon-and-stars-J7TnXY {
+  height: 51px;
+  left: 1047px;
+  top: 34px;
+  width: 45px;
+}
+
+.final-design .about-us-7vbHAl {
+  background-color: var(--white);
+  height: 512px;
+  left: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: 1280px;
+  width: 1440px;
+}
+
+.final-design .frame-23-fV4I8T {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 48px;
+  left: 96px;
+  position: relative;
+  top: -1px;
+}
+
+.final-design .frame-17-lk1tyX {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.final-design .about-us-xasxY3 {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .order-now-and-apprec-xasxY3 {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .frame-22-lk1tyX {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 24px;
+  position: relative;
+}
+
+.final-design .frame-19-yJvyz8 {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.final-design .vector-yHy5Wv {
+  height: 40px;
+  left: 28px;
+  top: 28px;
+  width: 40px;
+}
+
+.final-design .large-assortment-iEnQxP {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .we-offer-many-differ-ByHacq {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  width: 400px;
+}
+
+.final-design .frame-20-yJvyz8 {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.final-design .vector-pY5qZ1 {
+  height: 40px;
+  left: 28px;
+  top: 28px;
+  width: 40px;
+}
+
+.final-design .fast-free-shipping-58XfNK {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .x4-day-or-less-delive-pn79LF {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  width: 400px;
+}
+
+.final-design .frame-21-yJvyz8 {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.final-design .telephone-outbound-9irzbz {
+  background-color: transparent;
+  height: 40px;
+  left: 28px;
+  position: absolute;
+  top: 28px;
+  width: 40px;
+}
+
+.final-design .x247-support-WFPR8D {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .answers-to-any-busin-Jj7ZNZ {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  width: 400px;
+}
+
+.final-design .categories-7vbHAl {
+  background-color: var(--white);
+  height: 1024px;
+  left: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: 1792px;
+  width: 1440px;
+}
+
+.final-design .frame-24-xs0rBF {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 12px;
+  left: 589px;
+  position: absolute;
+  top: 0px;
+}
+
+.final-design .categories-MVT1Pt {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .find-what-you-are-looking-for-MVT1Pt {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .frame-25-xs0rBF {
+  background-color: var(--color-1);
+  height: 841px;
+  left: 0px;
+  position: absolute;
+  top: 183px;
+  width: 1440px;
+}
+
+.final-design .frame-39-TDSuxY {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 12px;
+  left: 96px;
+  position: absolute;
+  top: -48px;
+}
+
+.final-design .frame-36-SYwpt9 {
+  background-color: transparent;
+  background-image: url(../cdn.animaapp.com/projects/660317d608e677eb00c6a86c/releases/660317f697ca4334a9c6990a/img/frame-36.svg);
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 12px;
+  height: 512px;
+  overflow: hidden;
+  position: relative;
+  width: 352px;
+}
+
+.final-design .frame-41-TDSuxY {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 12px;
+  left: 992px;
+  position: absolute;
+  top: -48px;
+}
+
+.final-design .frame-37-4oQIzH {
+  background-color: transparent;
+  background-image: url(../cdn.animaapp.com/projects/660317d608e677eb00c6a86c/releases/660317f697ca4334a9c6990a/img/frame-37.svg);
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 12px;
+  height: 512px;
+  overflow: hidden;
+  position: relative;
+  width: 352px;
+}
+
+.final-design .frame-44-TDSuxY {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 24px;
+  left: 544px;
+  position: absolute;
+  top: 48px;
+}
+
+.final-design .frame-42-zz7lsf {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.final-design .frame-40-ikFIb1 {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.final-design .frame-38-lZxWRx {
+  background-color: transparent;
+  background-image: url(../cdn.animaapp.com/projects/660317d608e677eb00c6a86c/releases/660317f697ca4334a9c6990a/img/frame-38.svg);
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 12px;
+  height: 512px;
+  overflow: hidden;
+  position: relative;
+  width: 352px;
+}
+
+.final-design .plant-accessories-lZxWRx {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .horem-ipsum-dolor-si-ikFIb1 {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  width: 352px;
+}
+
+.final-design .frame-43-zz7lsf {
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 8px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  padding: 12px 24px;
+  position: relative;
+}
+
+.final-design .explore-KuPi0F {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.final-design .testimonial-7vbHAl {
+  background-color: var(--white);
+  height: 800px;
+  left: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: 2816px;
+  width: 1440px;
+}
+
+.final-design .what-customers-say-about-greemind-6eYx0c {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  left: 96px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 95px;
+  width: 457px;
+}
+
+.final-design .frame-45-6eYx0c {
+  background-color: var(--color-1);
+  border-radius: 12px;
+  height: 330px;
+  left: 96px;
+  overflow: hidden;
+  position: absolute;
+  top: 240px;
+  width: 800px;
+}
+
+.final-design .group-9-GNXbdG {
+  background-color: transparent;
+  height: 206px;
+  left: 13px;
+  position: absolute;
+  top: 126px;
+  width: 150px;
+}
+
+.final-design .vector-6HJZBk {
+  height: 41px;
+  left: 35px;
+  top: 62px;
+  width: 48px;
+}
+
+.final-design .unsplash_5a-g-uy-cw_-6HJZBk {
+  background-color: transparent;
+  height: 206px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 150px;
+}
+
+.final-design .frame-48-6eYx0c {
+  background-color: var(--color-1);
+  border-radius: 12px;
+  height: 330px;
+  left: 944px;
+  overflow: hidden;
+  position: absolute;
+  top: 240px;
+  width: 800px;
+}
+
+.final-design .group-10-x9PIci {
+  background-color: transparent;
+  height: 192px;
+  left: 29px;
+  position: absolute;
+  top: 138px;
+  width: 128px;
+}
+
+.final-design .vector-4Yp1h5 {
+  height: 41px;
+  left: 19px;
+  top: 50px;
+  width: 48px;
+}
+
+.final-design .unsplash_o3ymv-t7-wf9-u-removebg-preview-4Yp1h5 {
+  background-color: transparent;
+  height: 192px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 128px;
+}
+
+.final-design .frame-47-6eYx0c {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  gap: 12px;
+  left: 787px;
+  position: absolute;
+  top: 423px;
+}
+
+.final-design .star-fill-quBaPa {
+  background-color: transparent;
+  height: 20px;
+  position: relative;
+  width: 20px;
+}
+
+.final-design .x45-quBaPa {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .frame-49-6eYx0c {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  gap: 6px;
+  left: 1260px;
+  position: absolute;
+  top: 108px;
+}
+
+.final-design .rectangle-3-VyKOa7 {
+  background-color: var(--color-1);
+  border-radius: 12px;
+  height: 6px;
+  position: relative;
+  width: 48px;
+}
+
+.final-design .rectangle-4-VyKOa7 {
+  background-color: #d9d9d9;
+  border-radius: 12px;
+  height: 6px;
+  position: relative;
+  width: 12px;
+}
+
+.final-design .rectangle-5-VyKOa7 {
+  background-color: #d9d9d9;
+  border-radius: 12px;
+  height: 6px;
+  position: relative;
+  width: 12px;
+}
+
+.final-design .footer-7vbHAl {
+  background-color: var(--color-1);
+  height: 400px;
+  left: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: 3616px;
+  width: 1440px;
+  /* margin: 10px; */
+}
+
+.final-design .frame-52-3X9J7f {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 24px;
+  left: 96px;
+  position: absolute;
+  top: 48px;
+}
+
+.final-design .frame-50-2vGgnq {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+}
+
+.final-design .greenmind-NNrHcS {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-quella-regular);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .we-help-you-find-your-dream-plant-NNrHcS {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: 189px;
+}
+
+.final-design .frame-51-2vGgnq {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 24px;
+  position: relative;
+}
+
+.final-design .group-11-4uQU1Q {
+  background-color: transparent;
+  height: 48px;
+  position: relative;
+  width: 48px;
+}
+
+.final-design .ggfacebook-J2GpQj {
+  background-color: transparent;
+  height: 20px;
+  left: 14px;
+  position: absolute;
+  top: 14px;
+  width: 20px;
+}
+
+.final-design .ellipse-2-J2GpQj {
+  background-color: transparent;
+  border: 1px solid;
+  border-color: var(--color-2);
+  border-radius: 24px;
+  height: 48px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 48px;
+}
+
+.final-design .group-12-4uQU1Q {
+  background-color: transparent;
+  height: 48px;
+  position: relative;
+  width: 48px;
+}
+
+.final-design .riinstagram-fill-CjxsYr {
+  background-color: transparent;
+  height: 20px;
+  left: 14px;
+  position: absolute;
+  top: 14px;
+  width: 20px;
+}
+
+.final-design .group-13-4uQU1Q {
+  background-color: transparent;
+  height: 48px;
+  position: relative;
+  width: 48px;
+}
+
+.final-design .vector-6PQezT {
+  height: 16px;
+  left: 14px;
+  top: 16px;
+  width: 20px;
+}
+
+.final-design .frame-56-3X9J7f {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  gap: 48px;
+  left: 892px;
+  position: absolute;
+  top: 48px;
+}
+
+.final-design .frame-53-SRxj8Z {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+}
+
+.final-design .information-xS8927 {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .about-xS8927 {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .product-xS8927 {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .blog-xS8927 {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .frame-54-SRxj8Z {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+}
+
+.final-design .company-94Zmxt {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .community-94Zmxt {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .career-94Zmxt {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .our-story-94Zmxt {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .frame-55-SRxj8Z {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+}
+
+.final-design .contact-5v9ZEE {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .getting-started-5v9ZEE {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .pricing-5v9ZEE {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .resources-5v9ZEE {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .x2023-all-right-reser-3X9J7f {
+  background-color: transparent;
+  height: auto;
+  left: 97px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 324px;
+  width: auto;
+}
+
+.final-design .arrow-right {
+  background-color: transparent;
+  height: 20px;
+  position: relative;
+  width: 24px;
+}
+
+.final-design .artificial-plants {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .ellipse-1 {
+  background-color: var(--color-1);
+  border-radius: 48px;
+  height: 96px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 96px;
+}
+
+.final-design .ellipse-3 {
+  background-color: transparent;
+  border: 1px solid;
+  border-color: var(--color-2);
+  border-radius: 24px;
+  height: 48px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 48px;
+}
+
+.final-design .frame-14 {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.final-design .frame-15 {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.final-design .frame-18 {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+}
+
+.final-design .frame-46 {
+  align-items: flex-start;
+  background-color: transparent;
+  display: inline-flex;
+  flex-direction: column;
+  left: 170px;
+  position: absolute;
+  top: 183px;
+}
+
+.final-design .frame-7 {
+  background-color: transparent;
+  position: relative;
+}
+
+.final-design .frame-8 {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.final-design .group-1 {
+  background-color: transparent;
+  height: 96px;
+  position: relative;
+  width: 96px;
+}
+
+.final-design .john-doe {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .jorem-ipsum-dolor-si {
+  background-color: transparent;
+  color: var(--color-3);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 500;
+  height: auto;
+  left: 48px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 47px;
+  width: 704px;
+}
+
+.final-design .moon-and-stars {
+  background-color: transparent;
+  position: absolute;
+}
+
+.final-design .natural-plants {
+  background-color: transparent;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
+
+.final-design .vector {
+  background-color: transparent;
+  position: absolute;
+}
+
+.final-design .youtuber {
+  background-color: transparent;
+  color: var(--color-2);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+  width: fit-content;
+}
