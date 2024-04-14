@@ -1,0 +1,153 @@
+*, ::before, ::after{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+.displayNone{
+  display:none;
+}
+html{
+  font-size:16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background: rgb(63,94,251);
+  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+ul{
+  width: 100%;
+  padding: 1rem;
+  list-style: none;
+  display: flex;
+  gap:1rem;
+  position: absolute;
+  right: 0;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-top: 0;
+  align-items: center;
+}
+
+ul>li{
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  padding-left: 1rem;
+}
+
+ul>li>textarea{
+  min-height: 9rem;
+  min-width: 15rem;
+  width:100%;
+  font-size: 1.2rem;
+  padding: .5rem;
+  padding-right: 3rem;
+  color:black;
+  transition: .2s;
+}
+
+ul>li>div.wrapperActionButtons{
+  position: absolute;
+  right: 0;
+  top:0;
+
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  gap:.5rem;
+
+  padding-right: .5rem;
+  padding-top:.5rem;
+  font-size: 1.5rem;
+  z-index: 100;
+}
+
+ul>li>div.wrapperActionButtons>i{
+  cursor: pointer;
+  color:whitesmoke;
+  transition: .3s;
+  font-size: 1.8rem;
+}
+
+ul>li>div.wrapperActionButtons>i:hover{
+  color:navy;
+}
+
+ul>li>div.wrapperActionButtons>i.fa-circle-xmark:hover{
+  color:red;
+}
+
+textarea.editing{
+  background-color: rgb(255, 180, 180) !important;
+  font-size: 1.5rem;
+  width: 40rem !important;
+  height: 25rem !important;
+}
+
+ul>li>div.wrapperActionButtons>i.markPencilActive{
+ color:navy; 
+}
+
+h1{
+  text-align: center;
+  padding-top: 1rem;
+  color:rebeccapurple;
+  background-color: rgb(255, 201, 162);
+  padding-bottom: 10px;
+}
+
+h2{
+  font-size: 1rem;
+  padding-right:2rem;
+}
+
+p.timeStamp{
+  font-style: italic;
+  color: rgb(234, 245, 255);
+  font-weight: 400;
+}
+
+form#containerTakeANewNote{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid lightgray;
+  box-shadow:  1px 1px 8px 1px #9d9d9d;
+  margin-top:1rem;
+  /* margin-left:1rem; */
+  border-radius: .5rem;
+  max-width: 20rem;
+  gap: .5rem;
+  padding: 1rem;
+}
+form#containerTakeANewNote textarea{
+  height: 10rem;
+  padding: .5rem;
+  font-size: 1rem;
+  background-color: #90ee90;
+}
+
+form#containerTakeANewNote textarea::placeholder{
+  color:black;
+  font-style:italic;
+}
+form#containerTakeANewNote button{
+  padding: .5rem;
+}
+form#containerTakeANewNote div.wrapperInputTitleAndColorPicker{
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  align-items: center;
+}
+
+form#containerTakeANewNote div.wrapperInputTitleAndColorPicker>input[type=text]{
+  width: 100%;
+  padding:.5rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+
