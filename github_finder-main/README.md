@@ -1,0 +1,3 @@
+# GitHub Finder 👨‍💻🔍
+This app lets you find your desired GitHub profile and it's details in one place with simplicity!   
+Try out to find more...
