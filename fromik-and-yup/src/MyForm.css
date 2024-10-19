@@ -1,0 +1,22 @@
+/* src/MyForm.css */
+.form-container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .form-field {
+    margin-bottom: 20px;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+  }
+  

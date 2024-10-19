@@ -22,7 +22,9 @@ module.exports = {
     extensions: ['.js', '.jsx'], // Allow importing JS and JSX files without extensions
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'), // Serve content from 'dist' directory
+    static: {
+        directory: path.join(__dirname, 'public'), // Serve static files from 'public'
+      },
     compress: true,
     port: 3000, // Dev server port
   },
