@@ -45,33 +45,31 @@ function updateChart(data) {
 
     const ctx = document.getElementById('stockChart').getContext('2d');
     new Chart(ctx, {
-        type: 'line',
+        type: 'line', // Line chart, but we'll modify it to appear as a mountain
         data: {
             labels: dates,
             datasets: [{
                 label: 'Stock Price',
                 data: prices,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
+                backgroundColor: 'rgba(75, 192, 192, 0.2)', // Fill color for mountain view
+                borderColor: 'rgba(75, 192, 192, 1)', // Line color
+                borderWidth: 2,
+                fill: true, // Enables the "mountain" fill effect
+                tension: 0.4 // Smoothens the line to create a nicer curve
             }]
         },
         options: {
             scales: {
-                x: { beginAtZero: true },
+                x: { beginAtZero: false },
                 y: { beginAtZero: true }
-            }
+            },
         }
     });
 }
 
+
 // Add stock data to comparison table
 function addToComparison(symbol, data) {
-    if (comparedStocks[symbol]) {
-        alert(`${symbol} is already in the comparison.`);
-        return;
-    }
-
     const dailyData = data['Time Series (Daily)'];
     const latestDate = Object.keys(dailyData)[0];
     const latestData = dailyData[latestDate];
@@ -80,9 +78,13 @@ function addToComparison(symbol, data) {
     const change = (latestData['4. close'] - latestData['1. open']).toFixed(2);
     const volume = latestData['5. volume'];
 
-    comparedStocks[symbol] = { price, change, volume }; // Store stock data
-
-    updateComparisonTable(); // Update the table with the new data
+    // Check if the stock is already in the comparison table
+    if (!comparedStocks[symbol]) {
+        comparedStocks[symbol] = { price, change, volume }; // Store stock data
+        updateComparisonTable(); // Update the table with the new data
+    } else {
+        alert(`${symbol} is already in the comparison.`);
+    }
 }
 
 // Update the comparison table
