@@ -1,11 +1,12 @@
 // script.js
 const API_KEY = 'your_alpha_vantage_api_key';
+let comparedStocks = {}; // Store the compared stocks
 
 // Search and display stock data
 document.getElementById('searchButton').addEventListener('click', async () => {
     const symbol = document.getElementById('stockSymbol').value.toUpperCase();
     if (symbol) {
-        fetchStockData(symbol);
+        await fetchStockData(symbol);
     }
 });
 
@@ -19,6 +20,7 @@ async function fetchStockData(symbol) {
     if (data['Time Series (Daily)']) {
         displayStockData(data, symbol);
         updateChart(data);
+        addToComparison(symbol, data);
     } else {
         alert('Stock not found');
     }
@@ -60,6 +62,46 @@ function updateChart(data) {
                 y: { beginAtZero: true }
             }
         }
+    });
+}
+
+// Add stock data to comparison table
+function addToComparison(symbol, data) {
+    if (comparedStocks[symbol]) {
+        alert(`${symbol} is already in the comparison.`);
+        return;
+    }
+
+    const dailyData = data['Time Series (Daily)'];
+    const latestDate = Object.keys(dailyData)[0];
+    const latestData = dailyData[latestDate];
+
+    const price = latestData['4. close'];
+    const change = (latestData['4. close'] - latestData['1. open']).toFixed(2);
+    const volume = latestData['5. volume'];
+
+    comparedStocks[symbol] = { price, change, volume }; // Store stock data
+
+    updateComparisonTable(); // Update the table with the new data
+}
+
+// Update the comparison table
+function updateComparisonTable() {
+    const tableBody = document.querySelector('#comparisonTable tbody');
+    tableBody.innerHTML = ''; // Clear existing rows
+
+    Object.keys(comparedStocks).forEach(stockSymbol => {
+        const stock = comparedStocks[stockSymbol];
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${stockSymbol}</td>
+            <td>${stock.price}</td>
+            <td>${stock.change}</td>
+            <td>${stock.volume}</td>
+        `;
+
+        tableBody.appendChild(row);
     });
 }
 
