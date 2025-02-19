@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Stock Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Stock Tracker Dashboard</h1>
+        <div class="search-bar">
+            <input type="text" id="stockSymbol" placeholder="Enter Stock Symbol (e.g., AAPL, MSFT)">
+            <button id="searchButton">Search</button>
+        </div>
+    </header>
+
+    <section class="content">
+        <!-- Dropdown for trending stocks -->
+        <div class="trending-stocks">
+            <label for="trendingDropdown">Trending Stocks:</label>
+            <select id="trendingDropdown"></select>
+        </div>
+
+        <!-- Stock information -->
+        <div id="stockData">
+            <h2>Stock Information</h2>
+            <p>Price: <span id="stockPrice"></span></p>
+            <p>Change: <span id="stockChange"></span></p>
+            <p>Volume: <span id="stockVolume"></span></p>
+        </div>
+
+        <!-- Stock price trends graph -->
+        <div class="chart-container">
+            <canvas id="stockChart"></canvas>
+        </div>
+
+        <!-- Dynamic table to compare stocks -->
+        <div class="comparison-table">
+            <h2>Compare Stocks</h2>
+            <table id="comparisonTable">
+                <thead>
+                    <tr>
+                        <th>Stock</th>
+                        <th>Price</th>
+                        <th>Change</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamically populated rows -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
