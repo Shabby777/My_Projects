@@ -56,7 +56,7 @@ const usersData = [
   },
   {
     avatar:
-      "https://upload.wikimedia.org/wikipedia/commons/5/5b/Tom_Hiddleston_at_the_2024_Toronto_International_Film_Festival_%28cropped%29.jpg",
+      "https://www.themoviedb.org/t/p/w500/mclHxMm8aPlCPKptP67257F5GPo.jpg",
     name: "Tom Hiddleston",
     time: "Dec 8",
     status: "Loki",
@@ -83,9 +83,9 @@ const usersData = [
   },
 ];
 
-// Json data ...........................................
-const JsonData = {
-  chat1: [
+// chat data ...........................................
+const chatData = {
+  "John Mayers": [
     {
       from: {
         type: "user1",
@@ -119,9 +119,9 @@ const JsonData = {
       msg: {
         message: "john.mayers@gmail.com",
       },
-    },   
+    },
   ],
-  chat2: [
+  "Tony Stark": [
     {
       from: {
         type: "user1",
@@ -155,7 +155,6 @@ const JsonData = {
       msg: {
         message: "tony.stark@gmail.com",
       },
-    },    
+    },
   ],
-  
 };
