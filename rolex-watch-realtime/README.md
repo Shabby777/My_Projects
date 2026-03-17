@@ -1,6 +1,6 @@
 # Rolex Watch Real-Time App
 
-A small web app that fetches live time data and displays a ticking clock for selected timezones.
+A small web app that fetches real-time data from the World Time API and displays a live ticking clock for selected timezones.
 
 ## Run
 Open `index.html` in a browser.

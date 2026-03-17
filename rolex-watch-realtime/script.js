@@ -5,7 +5,6 @@ const statusDisplay = document.getElementById("statusDisplay");
 
 let liveDate = null;
 let tickInterval = null;
-let latestRequestId = 0;
 
 const formatTime = (date, timezone) =>
   new Intl.DateTimeFormat([], {
@@ -45,82 +44,25 @@ const startTicking = () => {
   tickInterval = setInterval(renderClock, 1000);
 };
 
-const fetchFromTimeApi = async (timezone) => {
-  const response = await fetch(
-    `https://timeapi.io/api/Time/current/zone?timeZone=${encodeURIComponent(
-      timezone
-    )}`
-  );
-
-  if (!response.ok) {
-    throw new Error("timeapi.io request failed");
-  }
-
-  const data = await response.json();
-  if (!data.dateTime) {
-    throw new Error("timeapi.io response missing dateTime");
-  }
-
-  return new Date(data.dateTime);
-};
-
-const fetchFromWorldTimeApi = async (timezone) => {
-  const response = await fetch(
-    `https://worldtimeapi.org/api/timezone/${encodeURIComponent(timezone)}`
-  );
-
-  if (!response.ok) {
-    throw new Error("worldtimeapi.org request failed");
-  }
-
-  const data = await response.json();
-  if (!data.datetime) {
-    throw new Error("worldtimeapi.org response missing datetime");
-  }
-
-  return new Date(data.datetime);
-};
-
 const fetchRealtime = async () => {
-  latestRequestId += 1;
-  const requestId = latestRequestId;
   const timezone = timezoneSelect.value;
   statusDisplay.textContent = `Fetching live time for ${timezone}...`;
 
   try {
-    const syncedDate = await fetchFromTimeApi(timezone);
+    const response = await fetch(
+      `https://worldtimeapi.org/api/timezone/${timezone}`
+    );
 
-    if (requestId !== latestRequestId) {
-      return;
+    if (!response.ok) {
+      throw new Error("Live time service is unavailable");
     }
 
-    liveDate = syncedDate;
-    statusDisplay.textContent = `Live time synced • ${timezone} (timeapi.io)`;
+    const data = await response.json();
+    liveDate = new Date(data.datetime);
+    statusDisplay.textContent = `Live time synced • ${timezone}`;
     startTicking();
-    return;
-  } catch (timeApiError) {
-    try {
-      const syncedDate = await fetchFromWorldTimeApi(timezone);
-
-      if (requestId !== latestRequestId) {
-        return;
-      }
-
-      liveDate = syncedDate;
-      statusDisplay.textContent =
-        "Live time synced • " + `${timezone} (worldtimeapi.org fallback)`;
-      startTicking();
-      return;
-    } catch (worldTimeApiError) {
-      if (requestId !== latestRequestId) {
-        return;
-      }
-
-      liveDate = new Date();
-      statusDisplay.textContent =
-        "Live API unavailable. Showing device time fallback.";
-      startTicking();
-    }
+  } catch (error) {
+    statusDisplay.textContent = "Could not fetch live time. Try again shortly.";
   }
 };
 
