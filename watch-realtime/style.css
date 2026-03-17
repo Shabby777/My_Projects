@@ -1,4 +1,13 @@
 :root {
+  --bg: #070b14;
+  --card: #111822;
+  --steel: #d8dde4;
+  --steel-dark: #8e98a8;
+  --dial: #0d5c93;
+  --dial-dark: #083a61;
+  --text: #f3f6ff;
+  --muted: #a9b6c8;
+  --gold: #d9b55a;
   --bg: #0f1013;
   --card: #181a20;
   --gold: #d4af37;

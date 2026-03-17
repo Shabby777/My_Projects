@@ -3,11 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch • Analog Real-Time Clock</title>
     <title>Rolex Watch • Real-Time Clock</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main class="watch-app">
+      <h1>Watch App</h1>
+      <p class="tagline">Analog + real-time world clock</p>
+
+      <section class="card">
+        <div class="watch-shell" aria-hidden="true">
+          <div class="bezel"></div>
+          <div class="dial">
+            <div class="hour-marker marker-12"></div>
+            <div class="hour-marker marker-1"></div>
+            <div class="hour-marker marker-2"></div>
+            <div class="hour-marker marker-3"></div>
+            <div class="hour-marker marker-4"></div>
+            <div class="hour-marker marker-5"></div>
+            <div class="hour-marker marker-6"></div>
+            <div class="hour-marker marker-7"></div>
+            <div class="hour-marker marker-8"></div>
+            <div class="hour-marker marker-9"></div>
+            <div class="hour-marker marker-10"></div>
+            <div class="hour-marker marker-11"></div>
+
+            <div class="hand hour-hand" id="hourHand"></div>
+            <div class="hand minute-hand" id="minuteHand"></div>
+            <div class="hand second-hand" id="secondHand"></div>
+            <div class="center-pin"></div>
+          </div>
+        </div>
+
       <h1>Rolex Watch</h1>
       <p class="tagline">Real-time world clock data</p>
 

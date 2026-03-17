@@ -2,6 +2,9 @@ const timezoneSelect = document.getElementById("timezoneSelect");
 const timeDisplay = document.getElementById("timeDisplay");
 const dateDisplay = document.getElementById("dateDisplay");
 const statusDisplay = document.getElementById("statusDisplay");
+const hourHand = document.getElementById("hourHand");
+const minuteHand = document.getElementById("minuteHand");
+const secondHand = document.getElementById("secondHand");
 
 let liveDate = null;
 let tickInterval = null;
@@ -25,6 +28,37 @@ const formatDate = (date, timezone) =>
     day: "numeric",
   }).format(date);
 
+const getClockParts = (date, timezone) => {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: timezone,
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(date);
+
+  const hour = Number(parts.find((part) => part.type === "hour")?.value || 0);
+  const minute = Number(
+    parts.find((part) => part.type === "minute")?.value || 0
+  );
+  const second = Number(
+    parts.find((part) => part.type === "second")?.value || 0
+  );
+
+  return { hour, minute, second };
+};
+
+const setAnalogHands = (date, timezone) => {
+  const { hour, minute, second } = getClockParts(date, timezone);
+  const hourRotation = (hour % 12) * 30 + minute * 0.5 + second / 120;
+  const minuteRotation = minute * 6 + second * 0.1;
+  const secondRotation = second * 6;
+
+  hourHand.style.transform = `translateX(-50%) rotate(${hourRotation}deg)`;
+  minuteHand.style.transform = `translateX(-50%) rotate(${minuteRotation}deg)`;
+  secondHand.style.transform = `translateX(-50%) rotate(${secondRotation}deg)`;
+};
+
 const renderClock = () => {
   if (!liveDate) {
     return;
@@ -33,6 +67,7 @@ const renderClock = () => {
   const timezone = timezoneSelect.value;
   timeDisplay.textContent = formatTime(liveDate, timezone);
   dateDisplay.textContent = formatDate(liveDate, timezone);
+  setAnalogHands(liveDate, timezone);
   liveDate = new Date(liveDate.getTime() + 1000);
 };
 
