@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch • Analog Real-Time Clock</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="watch-app">
+      <h1>Watch App</h1>
+      <p class="tagline">Analog + real-time world clock</p>
+
+      <section class="card">
+        <div class="watch-shell" aria-hidden="true">
+          <div class="bezel"></div>
+          <div class="dial">
+            <div class="hour-marker marker-12"></div>
+            <div class="hour-marker marker-1"></div>
+            <div class="hour-marker marker-2"></div>
+            <div class="hour-marker marker-3"></div>
+            <div class="hour-marker marker-4"></div>
+            <div class="hour-marker marker-5"></div>
+            <div class="hour-marker marker-6"></div>
+            <div class="hour-marker marker-7"></div>
+            <div class="hour-marker marker-8"></div>
+            <div class="hour-marker marker-9"></div>
+            <div class="hour-marker marker-10"></div>
+            <div class="hour-marker marker-11"></div>
+
+            <div class="hand hour-hand" id="hourHand"></div>
+            <div class="hand minute-hand" id="minuteHand"></div>
+            <div class="hand second-hand" id="secondHand"></div>
+            <div class="center-pin"></div>
+          </div>
+        </div>
+
+        <label for="timezoneSelect">Timezone</label>
+        <select id="timezoneSelect" aria-label="Select timezone">
+          <option value="Europe/Zurich">Europe/Zurich</option>
+          <option value="America/New_York">America/New_York</option>
+          <option value="Asia/Dubai">Asia/Dubai</option>
+          <option value="Asia/Tokyo">Asia/Tokyo</option>
+          <option value="Asia/Kolkata">Asia/Kolkata</option>
+        </select>
+
+        <div class="time" id="timeDisplay">--:--:--</div>
+        <div class="meta" id="dateDisplay">Loading date…</div>
+        <div class="meta" id="statusDisplay">Fetching live time…</div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
