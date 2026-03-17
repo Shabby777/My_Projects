@@ -5,6 +5,7 @@ const statusDisplay = document.getElementById("statusDisplay");
 
 let liveDate = null;
 let tickInterval = null;
+let latestRequestId = 0;
 
 const formatTime = (date, timezone) =>
   new Intl.DateTimeFormat([], {
@@ -81,22 +82,40 @@ const fetchFromWorldTimeApi = async (timezone) => {
 };
 
 const fetchRealtime = async () => {
+  latestRequestId += 1;
+  const requestId = latestRequestId;
   const timezone = timezoneSelect.value;
   statusDisplay.textContent = `Fetching live time for ${timezone}...`;
 
   try {
-    liveDate = await fetchFromTimeApi(timezone);
+    const syncedDate = await fetchFromTimeApi(timezone);
+
+    if (requestId !== latestRequestId) {
+      return;
+    }
+
+    liveDate = syncedDate;
     statusDisplay.textContent = `Live time synced • ${timezone} (timeapi.io)`;
     startTicking();
     return;
   } catch (timeApiError) {
     try {
-      liveDate = await fetchFromWorldTimeApi(timezone);
+      const syncedDate = await fetchFromWorldTimeApi(timezone);
+
+      if (requestId !== latestRequestId) {
+        return;
+      }
+
+      liveDate = syncedDate;
       statusDisplay.textContent =
         "Live time synced • " + `${timezone} (worldtimeapi.org fallback)`;
       startTicking();
       return;
     } catch (worldTimeApiError) {
+      if (requestId !== latestRequestId) {
+        return;
+      }
+
       liveDate = new Date();
       statusDisplay.textContent =
         "Live API unavailable. Showing device time fallback.";

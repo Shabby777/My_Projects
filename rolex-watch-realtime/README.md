@@ -9,5 +9,6 @@ Open `index.html` in a browser.
 - Fetches real-time data from `https://timeapi.io`
 - Uses `https://worldtimeapi.org` as API fallback
 - Falls back to device time if both APIs are unavailable
+- Prevents stale API responses from overwriting newer timezone selections
 - Timezone switcher
 - Live clock updates every second after sync
