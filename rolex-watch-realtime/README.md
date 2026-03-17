@@ -6,6 +6,9 @@ A small web app that fetches real-time data from the World Time API and displays
 Open `index.html` in a browser.
 
 ## Features
-- Fetches real-time time data from `https://worldtimeapi.org`
+- Fetches real-time data from `https://timeapi.io`
+- Uses `https://worldtimeapi.org` as API fallback
+- Falls back to device time if both APIs are unavailable
+- Prevents stale API responses from overwriting newer timezone selections
 - Timezone switcher
 - Live clock updates every second after sync
