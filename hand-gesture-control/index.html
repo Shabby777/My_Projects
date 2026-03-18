@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hand Gesture Control</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">MediaPipe Hands + getUserMedia</p>
+          <h1>Browser Hand Gesture Control</h1>
+          <p class="hero-copy">
+            Use an open hand to steer the virtual cursor and pinch your index finger and thumb to click on items.
+          </p>
+        </div>
+        <button id="startButton" class="primary-button">Enable webcam</button>
+      </header>
+
+      <main class="dashboard">
+        <section class="panel tracking-panel">
+          <div class="panel-header">
+            <div>
+              <h2>Live Hand Tracking</h2>
+              <p>Mirror view with landmarks rendered in real time.</p>
+            </div>
+            <span id="cameraStatus" class="status-pill idle">Camera idle</span>
+          </div>
+
+          <div class="video-stage" id="interactiveSurface">
+            <video id="video" autoplay playsinline muted></video>
+            <canvas id="outputCanvas"></canvas>
+            <div class="stage-overlay">
+              <div class="overlay-card">
+                <span class="label">Gesture</span>
+                <strong id="gestureLabel">Waiting for camera</strong>
+              </div>
+              <div class="overlay-card">
+                <span class="label">Cursor</span>
+                <strong id="cursorLabel">0, 0</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel control-panel">
+          <div class="panel-header">
+            <div>
+              <h2>Interactive Targets</h2>
+              <p>Hover with an open hand and pinch to click.</p>
+            </div>
+          </div>
+
+          <div class="controls-grid">
+            <button class="demo-target" data-action="Play / Pause">Play / Pause</button>
+            <button class="demo-target" data-action="Next Slide">Next Slide</button>
+            <button class="demo-target" data-action="Select Item">Select Item</button>
+            <button class="demo-target" data-action="Toggle Theme">Toggle Theme</button>
+          </div>
+
+          <div class="feedback-card">
+            <span class="label">Last action</span>
+            <strong id="actionLabel">Nothing clicked yet.</strong>
+          </div>
+
+          <div class="instruction-list">
+            <div>
+              <span>1</span>
+              <p>Allow webcam access when your browser asks.</p>
+            </div>
+            <div>
+              <span>2</span>
+              <p>Keep one hand visible and open to move the virtual cursor.</p>
+            </div>
+            <div>
+              <span>3</span>
+              <p>Pinch your thumb and index finger together to fire a click.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="virtualCursor" class="virtual-cursor"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
