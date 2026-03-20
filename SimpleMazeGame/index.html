@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Maze Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <div class="header-row">
+        <div>
+          <h1>Simple Maze Game</h1>
+          <p class="instructions">Use the arrow keys to move the blue player to the green goal.</p>
+        </div>
+        <button id="restartButton" class="restart-button" type="button">Restart Game</button>
+      </div>
+
+      <div class="status-bar" aria-label="Game status">
+        <p class="status-item"><span class="status-label">Timer:</span> <span id="timer">00:00.0</span></p>
+        <p id="message" class="message" aria-live="polite"></p>
+      </div>
+
+      <canvas id="mazeCanvas" width="500" height="500" aria-label="Maze game canvas"></canvas>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
