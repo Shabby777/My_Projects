@@ -8,8 +8,17 @@ body {
 h1 {
     text-align: center;
     color: whitesmoke;
-    background-color: #F94D00;
-    border-radius: 20px;
+    /* background-color: #F94D00;
+    backdrop-filter: blur(15px); */
+    border-radius: 5px;
+    padding: 10px;
+    /* From https://css.glass */
+background: rgba(249, 77, 0, 0.54);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(249, 77, 0, 0.3);
 }
 
 #cat-container {
@@ -24,7 +33,7 @@ h1 {
     height: 200px;
     object-fit: cover;
     margin: 10px;
-    border: 5px double #FBCEB1;
+    border: 5px double #612727;
 }
 
 #get-cat-btn {
