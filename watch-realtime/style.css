@@ -1,0 +1,81 @@
+:root {
+  --bg: #070b14;
+  --card: #111822;
+  --steel: #d8dde4;
+  --steel-dark: #8e98a8;
+  --dial: #0d5c93;
+  --dial-dark: #083a61;
+  --text: #f3f6ff;
+  --muted: #a9b6c8;
+  --gold: #d9b55a;
+  --bg: #0f1013;
+  --card: #181a20;
+  --gold: #d4af37;
+  --text: #f5f5f5;
+  --muted: #a4a9b6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at top, #1f2430, var(--bg) 45%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.watch-app {
+  width: min(92vw, 420px);
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+.tagline {
+  margin: 0.45rem 0 1.2rem;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 18px;
+  padding: 1.2rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+}
+
+select {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 9px;
+  border: 1px solid #2d3340;
+  background: #11141b;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.time {
+  font-size: clamp(2rem, 9vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.meta {
+  margin-top: 0.5rem;
+  color: var(--muted);
+}

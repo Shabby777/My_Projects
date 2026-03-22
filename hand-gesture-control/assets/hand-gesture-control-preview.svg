@@ -1,0 +1,105 @@
+<svg width="1440" height="980" viewBox="0 0 1440 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1440" y2="980" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#081120"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#10203A"/>
+      <stop offset="1" stop-color="#0D1729"/>
+    </linearGradient>
+    <linearGradient id="stage" x1="118" y1="344" x2="862" y2="826" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D1B2F"/>
+      <stop offset="1" stop-color="#1D314C"/>
+    </linearGradient>
+    <radialGradient id="cursor" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1110 400) rotate(90) scale(28)">
+      <stop stop-color="white"/>
+      <stop offset="0.5" stop-color="#93C5FD"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </radialGradient>
+    <filter id="shadow" x="0" y="0" width="1440" height="980" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#020817" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="980" fill="url(#bg)"/>
+  <g filter="url(#shadow)">
+    <rect x="80" y="72" width="1280" height="148" rx="30" fill="url(#panel)" stroke="#2F4364" stroke-width="2"/>
+    <rect x="80" y="260" width="820" height="640" rx="30" fill="url(#panel)" stroke="#2F4364" stroke-width="2"/>
+    <rect x="940" y="260" width="420" height="640" rx="30" fill="url(#panel)" stroke="#2F4364" stroke-width="2"/>
+  </g>
+
+  <rect x="118" y="344" width="744" height="482" rx="28" fill="url(#stage)" stroke="#36537D" stroke-width="2"/>
+
+  <g opacity="0.92">
+    <path d="M429 590L455 545L490 500L530 450L470 390L430 430L429 590Z" fill="#192A44"/>
+    <path d="M430 430L470 390L520 360L580 340L630 350L610 390L560 410L530 450L490 500L430 430Z" fill="#223858"/>
+  </g>
+
+  <g stroke="#66A9FF" stroke-width="6" stroke-linecap="round">
+    <path d="M430 430L470 390L520 360L580 340L630 350"/>
+    <path d="M430 430L530 450L560 410L610 390L665 395"/>
+    <path d="M530 450L490 500L530 470L575 455L620 460"/>
+    <path d="M490 500L455 545L500 530L545 528L590 537"/>
+    <path d="M455 545L430 590L475 590L520 600L560 620"/>
+    <path d="M430 430L430 590"/>
+  </g>
+
+  <g fill="#8B5CF6" stroke="#F8FAFC" stroke-width="2">
+    <circle cx="430" cy="430" r="8"/><circle cx="470" cy="390" r="8"/><circle cx="520" cy="360" r="8"/>
+    <circle cx="580" cy="340" r="8"/><circle cx="630" cy="350" r="8"/><circle cx="530" cy="450" r="8"/>
+    <circle cx="560" cy="410" r="8"/><circle cx="610" cy="390" r="8"/><circle cx="665" cy="395" r="8"/>
+    <circle cx="490" cy="500" r="8"/><circle cx="530" cy="470" r="8"/><circle cx="575" cy="455" r="8"/>
+    <circle cx="620" cy="460" r="8"/><circle cx="455" cy="545" r="8"/><circle cx="500" cy="530" r="8"/>
+    <circle cx="545" cy="528" r="8"/><circle cx="590" cy="537" r="8"/><circle cx="430" cy="590" r="8"/>
+    <circle cx="475" cy="590" r="8"/><circle cx="520" cy="600" r="8"/><circle cx="560" cy="620" r="8"/>
+  </g>
+
+  <rect x="1140" y="108" width="188" height="66" rx="20" fill="#6D8CFF"/>
+
+  <g fill="#17263F" stroke="#314560" stroke-width="2">
+    <rect x="978" y="346" width="182" height="94" rx="22"/>
+    <rect x="1182" y="346" width="178" height="94" rx="22"/>
+    <rect x="978" y="462" width="182" height="94" rx="22"/>
+    <rect x="1182" y="462" width="178" height="94" rx="22"/>
+    <rect x="978" y="588" width="382" height="92" rx="22" fill="#14233A"/>
+    <rect x="978" y="710" width="382" height="70" rx="22" fill="#14233A"/>
+    <rect x="978" y="794" width="382" height="70" rx="22" fill="#14233A"/>
+  </g>
+
+  <rect x="146" y="740" width="324" height="62" rx="18" fill="#13233D" stroke="#314560" stroke-width="2"/>
+  <rect x="490" y="740" width="324" height="62" rx="18" fill="#13233D" stroke="#314560" stroke-width="2"/>
+
+  <circle cx="1110" cy="400" r="30" fill="#315D96" opacity="0.28"/>
+  <circle cx="1110" cy="400" r="18" fill="#73B1FF" opacity="0.8"/>
+  <circle cx="1110" cy="400" r="11" fill="url(#cursor)"/>
+
+  <text x="116" y="102" fill="#87A2C7" font-family="Inter, Arial, sans-serif" font-size="20" letter-spacing="2">MEDIAPIPE HANDS + GETUSERMEDIA</text>
+  <text x="116" y="150" fill="#EEF5FF" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="700">Browser Hand Gesture Control</text>
+  <text x="116" y="194" fill="#9BB1CE" font-family="Inter, Arial, sans-serif" font-size="24">Use an open hand to move the virtual cursor and pinch to click on UI targets.</text>
+  <text x="1174" y="149" fill="white" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Enable webcam</text>
+
+  <text x="118" y="304" fill="#EEF5FF" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Live Hand Tracking</text>
+  <text x="118" y="336" fill="#8FA5C4" font-family="Inter, Arial, sans-serif" font-size="22">Mirror view with landmarks rendered in real time.</text>
+  <text x="700" y="304" fill="#9FF0CF" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">Camera live</text>
+
+  <text x="984" y="304" fill="#EEF5FF" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Interactive Targets</text>
+  <text x="984" y="336" fill="#8FA5C4" font-family="Inter, Arial, sans-serif" font-size="22">Hover with an open hand and pinch to click.</text>
+
+  <g fill="#EEF5FF" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle">
+    <text x="1069" y="402">Play / Pause</text>
+    <text x="1271" y="402">Next Slide</text>
+    <text x="1069" y="518">Select Item</text>
+    <text x="1271" y="518">Toggle Theme</text>
+  </g>
+
+  <text x="168" y="762" fill="#8FA5C4" font-family="Inter, Arial, sans-serif" font-size="18">Gesture</text>
+  <text x="168" y="789" fill="#EEF5FF" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Open hand → move cursor</text>
+  <text x="512" y="762" fill="#8FA5C4" font-family="Inter, Arial, sans-serif" font-size="18">Cursor</text>
+  <text x="512" y="789" fill="#EEF5FF" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">1110, 400</text>
+
+  <text x="1002" y="610" fill="#8FA5C4" font-family="Inter, Arial, sans-serif" font-size="18">Last action</text>
+  <text x="1002" y="642" fill="#EEF5FF" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Nothing clicked yet.</text>
+  <text x="1016" y="752" fill="#DCE8F8" font-family="Inter, Arial, sans-serif" font-size="22">1  Allow webcam access when your browser asks.</text>
+  <text x="1016" y="836" fill="#DCE8F8" font-family="Inter, Arial, sans-serif" font-size="22">2  Open hand = move cursor   •   3  Pinch = click</text>
+</svg>
