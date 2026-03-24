@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-background": "#171c1f",
+              "background": "#f6fafe",
+              "surface": "#f6fafe",
+              "secondary-fixed-dim": "#b9c7df",
+              "tertiary-fixed": "#6ffbbe",
+              "outline-variant": "#c3c6d0",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#e4e9ed",
+              "surface-container": "#eaeef2",
+              "secondary-container": "#d5e3fc",
+              "tertiary": "#003220",
+              "error-container": "#ffdad6",
+              "surface-dim": "#d6dade",
+              "secondary-fixed": "#d5e3fc",
+              "primary-fixed": "#d3e3ff",
+              "inverse-on-surface": "#edf1f5",
+              "on-secondary-container": "#57657a",
+              "primary-fixed-dim": "#a5c9fd",
+              "on-tertiary-container": "#29c48b",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#4edea3",
+              "on-secondary-fixed": "#0d1c2e",
+              "error": "#ba1a1a",
+              "surface-container-low": "#f0f4f8",
+              "inverse-primary": "#a5c9fd",
+              "on-primary-container": "#8cafe1",
+              "secondary": "#515f74",
+              "surface-tint": "#3c608e",
+              "on-error-container": "#93000a",
+              "primary": "#002c53",
+              "on-secondary-fixed-variant": "#3a485b",
+              "on-primary-fixed-variant": "#214874",
+              "on-tertiary-fixed": "#002113",
+              "on-surface-variant": "#43474f",
+              "surface-bright": "#f6fafe",
+              "primary-container": "#1a426e",
+              "tertiary-container": "#004b32",
+              "on-error": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#737780",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#2c3134",
+              "on-tertiary-fixed-variant": "#005236",
+              "surface-container-highest": "#dfe3e7",
+              "on-surface": "#171c1f",
+              "on-primary-fixed": "#001c39",
+              "surface-variant": "#dfe3e7"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .ghost-input {
+            border: none;
+            border-bottom: 2px solid rgba(195, 198, 208, 0.2);
+            transition: border-color 0.2s ease;
+        }
+        .ghost-input:focus {
+            outline: none;
+            border-bottom-color: #002c53;
+            box-shadow: none;
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #002c53 0%, #1a426e 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-low font-body text-on-surface min-h-screen">
+<!-- TopNavBar (Shared Component) -->
+<nav class="sticky top-0 z-50 flex items-center justify-between px-6 py-3 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-blue-900 dark:text-blue-50 tracking-tighter font-headline">Career Architect</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-slate-500 hover:text-blue-700 font-manrope text-sm font-semibold tracking-tight transition-colors" href="#">Dashboard</a>
+<a class="text-blue-900 font-bold border-b-2 border-blue-900 font-manrope text-sm tracking-tight" href="#">Applications</a>
+<a class="text-slate-500 hover:text-blue-700 font-manrope text-sm font-semibold tracking-tight transition-colors" href="#">Job Board</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-slate-50 rounded-full transition-colors active:opacity-80">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<button class="p-2 hover:bg-slate-50 rounded-full transition-colors active:opacity-80">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="Executive User Profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwI3oIG4GjnXTTGKI88a02uV7WTZ7QONJP9QHRox1KmY2ANLub3N7v9xi7xI7x1qwYTRAhdebp5upSYpHHC7P1VmgKkRdOAHcRqeuNR89kQMinw3GWfoQ4boSNJz2W7fghgcLUCOFHNoYGwu6m3E-cazEOt_J0jw1u2s1u_IbJYRPtbqUxpA8kOeja2mtqNvEaSIavujK6MSj_-Ww9hwhKvWJXdnmwy0rZWGPdwJEF1vsmguEAjwkfNkW_Ues3bg_d1fx9je3zKlKK"/>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-6 py-12">
+<!-- Editorial Header -->
+<header class="mb-12">
+<nav class="mb-4 flex items-center gap-2 text-on-surface-variant">
+<a class="text-label-md hover:text-primary transition-colors" href="#">Applications</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-label-md font-semibold text-primary">New Entry</span>
+</nav>
+<h1 class="font-headline text-5xl font-extrabold text-primary tracking-tight mb-2">Architect Your Next Move</h1>
+<p class="font-body text-on-surface-variant text-lg max-w-xl">Every great career path is built on intentionality. Document the details of your next high-stakes opportunity.</p>
+</header>
+<!-- Form Canvas -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden border border-outline-variant/5">
+<form class="p-10 space-y-10">
+<!-- Section 1: Core Identity -->
+<section>
+<div class="flex items-center gap-3 mb-8">
+<div class="w-1 h-6 bg-primary rounded-full"></div>
+<h2 class="font-headline text-xl font-bold text-primary">Core Opportunity</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant" for="job-title">Job Title</label>
+<input class="ghost-input bg-surface-container-highest/30 px-0 py-3 text-lg font-medium text-on-surface placeholder:text-outline/50" id="job-title" placeholder="e.g. Senior Solutions Architect" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant" for="company">Company Name</label>
+<input class="ghost-input bg-surface-container-highest/30 px-0 py-3 text-lg font-medium text-on-surface placeholder:text-outline/50" id="company" placeholder="e.g. Global Tech Solutions" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant" for="location">Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-on-surface-variant">location_on</span>
+<input class="ghost-input bg-surface-container-highest/30 pl-8 pr-0 py-3 text-lg font-medium text-on-surface w-full placeholder:text-outline/50" id="location" placeholder="Remote / New York, NY" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant" for="status">Current Status</label>
+<select class="ghost-input bg-surface-container-highest/30 px-0 py-3 text-lg font-medium text-on-surface appearance-none cursor-pointer" id="status">
+<option value="wishlist">Wishlist</option>
+<option value="applied">Applied</option>
+<option value="interviewing">Interviewing</option>
+<option value="offer">Offer Received</option>
+<option value="rejected">Archive</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Section 2: Logistics & Value -->
+<section>
+<div class="flex items-center gap-3 mb-8">
+<div class="w-1 h-6 bg-tertiary-fixed-dim rounded-full"></div>
+<h2 class="font-headline text-xl font-bold text-primary">Logistics &amp; Value</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant" for="job-url">Job Posting URL</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-on-surface-variant">link</span>
+<input class="ghost-input bg-surface-container-highest/30 pl-8 pr-0 py-3 text-lg font-medium text-on-surface w-full placeholder:text-outline/50" id="job-url" placeholder="https://linkedin.com/jobs/..." type="url"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant" for="salary">Salary Range</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-on-surface-variant">payments</span>
+<input class="ghost-input bg-surface-container-highest/30 pl-8 pr-0 py-3 text-lg font-medium text-on-surface w-full placeholder:text-outline/50" id="salary" placeholder="e.g. $140k — $180k" type="text"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Actions -->
+<footer class="pt-10 flex flex-col-reverse md:flex-row items-center justify-between gap-6 border-t border-surface-container-high">
+<button class="text-on-surface-variant font-label font-bold uppercase tracking-widest hover:text-primary transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined">close</span>
+                        Cancel Entry
+                    </button>
+<div class="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
+<button class="primary-gradient text-on-primary font-label font-bold uppercase tracking-widest py-4 px-12 rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all w-full md:w-auto" type="submit">
+                            Save Position
+                        </button>
+</div>
+</footer>
+</form>
+</div>
+<!-- Success Suggestion -->
+<div class="mt-8 flex items-center justify-center gap-6 text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-xs font-medium">Auto-saves to your active board</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-xs font-medium">Encrypted &amp; Private</span>
+</div>
+</div>
+</main>
+<!-- SideNavBar Logic Hidden on Mobile via logic (Optional based on JSON but this is a focus screen) -->
+<!-- We prioritize the form canvas so navigation is secondary -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 md:hidden">
+<nav class="bg-primary px-6 py-3 rounded-full shadow-2xl flex items-center gap-8">
+<span class="material-symbols-outlined text-on-primary">dashboard</span>
+<span class="material-symbols-outlined text-primary-fixed">add_circle</span>
+<span class="material-symbols-outlined text-on-primary">work</span>
+<span class="material-symbols-outlined text-on-primary">person</span>
+</nav>
+</div>
+</body></html>

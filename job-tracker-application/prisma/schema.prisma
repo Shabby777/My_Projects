@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String           @id @default(cuid())
+  name            String
+  email           String           @unique
+  jobApplications JobApplication[]
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
+
+model JobApplication {
+  id               String           @id @default(cuid())
+  userId           String
+  title            String
+  company          String
+  location         String?
+  status           String
+  sourceUrl        String?
+  description      String?
+  compensationText String?
+  salaryMin        Int?
+  salaryMax        Int?
+  appliedAt        DateTime?
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  user             User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  notes            JobNote[]
+  events           InterviewEvent[]
+  contacts         Contact[]
+}
+
+model JobNote {
+  id        String         @id @default(cuid())
+  jobId     String
+  category  String?
+  content   String
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  job       JobApplication @relation(fields: [jobId], references: [id], onDelete: Cascade)
+}
+
+model InterviewEvent {
+  id        String         @id @default(cuid())
+  jobId     String
+  title     String
+  type      String
+  startsAt  DateTime
+  endsAt    DateTime
+  details   String?
+  linkUrl   String?
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  job       JobApplication @relation(fields: [jobId], references: [id], onDelete: Cascade)
+}
+
+model Contact {
+  id        String         @id @default(cuid())
+  jobId     String
+  name      String
+  role      String?
+  company   String?
+  email     String?
+  linkedin  String?
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  job       JobApplication @relation(fields: [jobId], references: [id], onDelete: Cascade)
+}

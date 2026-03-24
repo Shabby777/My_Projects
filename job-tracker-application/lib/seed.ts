@@ -1,0 +1,1 @@
+export { ensureSeeded } from "@/lib/store";

@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  background: #f6fafe;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(111, 251, 190, 0.12), transparent 30%),
+    radial-gradient(circle at top right, rgba(26, 66, 110, 0.18), transparent 28%),
+    #f6fafe;
+  color: #171c1f;
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-headline {
+  font-family: "Manrope", sans-serif;
+}
+
+::selection {
+  background: #d3e3ff;
+  color: #001c39;
+}
+
+@layer components {
+  .surface-card {
+    @apply rounded-2xl bg-surface shadow-ambient;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em];
+  }
+
+  .field-label {
+    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-muted;
+  }
+
+  .ghost-input {
+    @apply w-full border-0 border-b-2 border-b-outline/20 bg-transparent px-0 py-3 text-sm text-ink outline-none transition focus:border-b-primary focus:ring-0;
+  }
+
+  .cta-button {
+    @apply inline-flex items-center justify-center rounded-xl bg-cta-gradient px-5 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:opacity-95;
+  }
+}

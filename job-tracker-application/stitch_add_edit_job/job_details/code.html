@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Job Detail - Career Architect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-background": "#171c1f",
+              "background": "#f6fafe",
+              "surface": "#f6fafe",
+              "secondary-fixed-dim": "#b9c7df",
+              "tertiary-fixed": "#6ffbbe",
+              "outline-variant": "#c3c6d0",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#e4e9ed",
+              "surface-container": "#eaeef2",
+              "secondary-container": "#d5e3fc",
+              "tertiary": "#003220",
+              "error-container": "#ffdad6",
+              "surface-dim": "#d6dade",
+              "secondary-fixed": "#d5e3fc",
+              "primary-fixed": "#d3e3ff",
+              "inverse-on-surface": "#edf1f5",
+              "on-secondary-container": "#57657a",
+              "primary-fixed-dim": "#a5c9fd",
+              "on-tertiary-container": "#29c48b",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#4edea3",
+              "on-secondary-fixed": "#0d1c2e",
+              "error": "#ba1a1a",
+              "surface-container-low": "#f0f4f8",
+              "inverse-primary": "#a5c9fd",
+              "on-primary-container": "#8cafe1",
+              "secondary": "#515f74",
+              "surface-tint": "#3c608e",
+              "on-error-container": "#93000a",
+              "primary": "#002c53",
+              "on-secondary-fixed-variant": "#3a485b",
+              "on-primary-fixed-variant": "#214874",
+              "on-tertiary-fixed": "#002113",
+              "on-surface-variant": "#43474f",
+              "surface-bright": "#f6fafe",
+              "primary-container": "#1a426e",
+              "tertiary-container": "#004b32",
+              "on-error": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#737780",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#2c3134",
+              "on-tertiary-fixed-variant": "#005236",
+              "surface-container-highest": "#dfe3e7",
+              "on-surface": "#171c1f",
+              "on-primary-fixed": "#001c39",
+              "surface-variant": "#dfe3e7"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift-no-lines {
+            border: none !important;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f6fafe;
+            color: #171c1f;
+        }
+        h1, h2, h3, .font-headline {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-6 py-3 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none tonal-shift-no-lines">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-blue-900 dark:text-blue-50 tracking-tighter font-headline">Career Architect</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-700 font-manrope text-sm font-semibold tracking-tight transition-colors" href="#">Dashboard</a>
+<a class="text-blue-900 dark:text-white font-bold border-b-2 border-blue-900 font-manrope text-sm tracking-tight" href="#">Applications</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-700 font-manrope text-sm font-semibold tracking-tight transition-colors" href="#">Job Board</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-700 font-manrope text-sm font-semibold tracking-tight transition-colors" href="#">Insights</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-highest border-none rounded-xl text-sm focus:ring-2 focus:ring-primary w-64" placeholder="Search applications..." type="text"/>
+</div>
+<button class="p-2 text-on-surface-variant hover:bg-slate-50 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-slate-50 rounded-full transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Executive User Profile" class="h-full w-full object-cover" data-alt="Close up of a professional executive portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9tF67V1f8kPCQJ0jcKYrUXV2l0Pk9-sbooXfYVOidOX0La6z0o1hUNo0fd2XTrVs6IIp7NxWY8Z50p5SElpGUQpqWrnJ64xVyfryOMAkbTbzldKqPOekwgbG5oIEW6mt2OtvtgfEs7_jBK1cGcvxdVEJi-lQaUv6-X0SFWW4BUaNWc10DluAVP4A-K5JCoLPZgGipXsrr6dQfwam6kc9rqwFxev0SAwYfw4JiKx_aqowV5AXRa3CErEzWf0le5wonFQ7-e6F7X8K5"/>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-10 flex gap-8">
+<!-- Left Column: Navigation/Summary -->
+<aside class="hidden xl:flex flex-col w-64 gap-6 sticky top-24 self-start">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Application Progress</h3>
+<div class="flex flex-col gap-4">
+<div class="flex items-start gap-3">
+<div class="w-1 h-8 bg-primary rounded-full"></div>
+<div>
+<p class="text-sm font-bold text-primary">Technical Interview</p>
+<p class="text-xs text-on-surface-variant">Round 3 of 5</p>
+</div>
+</div>
+<div class="flex items-start gap-3 opacity-40">
+<div class="w-1 h-8 bg-outline rounded-full"></div>
+<div>
+<p class="text-sm font-medium">System Design</p>
+<p class="text-xs text-on-surface-variant">Scheduled Oct 24</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Quick Links</h3>
+<ul class="space-y-3">
+<li><a class="flex items-center gap-2 text-sm text-primary font-medium hover:underline" href="#"><span class="material-symbols-outlined text-sm">link</span> Original Job Post</a></li>
+<li><a class="flex items-center gap-2 text-sm text-primary font-medium hover:underline" href="#"><span class="material-symbols-outlined text-sm">description</span> Resume Version 4.2</a></li>
+<li><a class="flex items-center gap-2 text-sm text-primary font-medium hover:underline" href="#"><span class="material-symbols-outlined text-sm">folder</span> Portfolio Assets</a></li>
+</ul>
+</div>
+</aside>
+<!-- Main Content: Job Detail -->
+<div class="flex-1 space-y-8">
+<!-- Header Section -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col md:flex-row justify-between items-start gap-6 border-l-4 border-tertiary-fixed">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Interviewing</span>
+<span class="text-on-surface-variant text-sm">• Applied Oct 12, 2023</span>
+</div>
+<h1 class="text-4xl font-extrabold text-primary tracking-tight mb-2">Senior Principal Architect</h1>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">domain</span> NovaSphere Tech</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">location_on</span> Remote, US</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">payments</span> $220k - $280k</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 w-full md:w-auto">
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg hover:bg-primary-container transition-all">
+                        Update Status <span class="material-symbols-outlined">expand_more</span>
+</button>
+<button class="border border-outline-variant text-primary px-6 py-2 rounded-lg font-bold text-xs uppercase tracking-wider hover:bg-surface-container-low transition-colors">
+                        Edit Details
+                    </button>
+</div>
+</section>
+<!-- Grid Layout for Details -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Span: Description & Notes -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Job Description -->
+<section class="bg-surface-container-lowest p-10 rounded-xl shadow-sm">
+<h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">subject</span> Job Description
+                        </h2>
+<div class="prose prose-slate max-w-none text-on-surface-variant space-y-4 leading-relaxed font-body">
+<p>As the Senior Principal Architect at NovaSphere, you will be the architectural anchor for our next-generation cloud ecosystem. You are expected to steer the technical direction of three cross-functional engineering pods, ensuring scalability, security, and developer velocity.</p>
+<h4 class="text-on-surface font-bold mt-6">Core Responsibilities</h4>
+<ul class="list-disc pl-5 space-y-2">
+<li>Design and oversee the implementation of distributed microservices architecture.</li>
+<li>Lead technical discovery and due diligence for new product features.</li>
+<li>Mentor staff engineers and foster a culture of architectural excellence.</li>
+<li>Collaborate with Product and Executive leadership to align technical strategy with business goals.</li>
+</ul>
+<h4 class="text-on-surface font-bold mt-6">The Ideal Candidate</h4>
+<p>You have a proven track record of scaling platforms to millions of users. You are as comfortable in a whiteboard session as you are reviewing critical PRs or discussing long-term infrastructure budgets.</p>
+</div>
+</section>
+<!-- Notes Area -->
+<section class="bg-surface-container-lowest p-10 rounded-xl shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">edit_note</span> Strategic Notes
+                            </h2>
+<button class="text-primary text-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">add</span> Add Note
+                            </button>
+</div>
+<div class="space-y-4">
+<div class="p-5 bg-surface-container-low rounded-xl">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-primary uppercase">Interview Prep • Oct 18</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant">more_horiz</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Focus on the 2021 migration project. They seemed very interested in how we handled data consistency across regions. Also, mention the pod restructuring initiative.</p>
+</div>
+<div class="p-5 bg-surface-container-low rounded-xl">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-primary uppercase">Culture Fit • Oct 15</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant">more_horiz</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">NovaSphere values "disruptive transparency." Be prepared to talk about a time a project failed and what the specific post-mortem look like.</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Span: Timeline & Contacts -->
+<div class="space-y-8">
+<!-- Interview Timeline -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+<h2 class="text-xl font-bold text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">event_repeat</span> Timeline
+                        </h2>
+<div class="relative pl-6 space-y-8">
+<!-- Vertical Line -->
+<div class="absolute left-2.5 top-2 bottom-2 w-0.5 bg-surface-container-highest"></div>
+<!-- Steps -->
+<div class="relative">
+<div class="absolute -left-6 top-1.5 w-4 h-4 rounded-full bg-primary ring-4 ring-primary-fixed"></div>
+<p class="text-xs font-bold text-primary uppercase">Oct 12</p>
+<p class="text-sm font-bold">Application Sent</p>
+<p class="text-xs text-on-surface-variant">via Internal Referral</p>
+</div>
+<div class="relative">
+<div class="absolute -left-6 top-1.5 w-4 h-4 rounded-full bg-primary ring-4 ring-primary-fixed"></div>
+<p class="text-xs font-bold text-primary uppercase">Oct 15</p>
+<p class="text-sm font-bold">Recruiter Screen</p>
+<p class="text-xs text-on-surface-variant">Completed (30 mins)</p>
+</div>
+<div class="relative">
+<div class="absolute -left-6 top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-surface-container-lowest ring-2 ring-primary"></div>
+<p class="text-xs font-bold text-primary uppercase">Oct 21 • 2:00 PM</p>
+<p class="text-sm font-bold">Technical Deep Dive</p>
+<p class="text-xs text-on-surface-variant">with Sarah Jenkins (VP Eng)</p>
+</div>
+<div class="relative opacity-30">
+<div class="absolute -left-6 top-1.5 w-4 h-4 rounded-full bg-outline"></div>
+<p class="text-xs font-bold text-on-surface-variant uppercase">Upcoming</p>
+<p class="text-sm font-bold">Panel Interview</p>
+<p class="text-xs text-on-surface-variant">Architecture Board</p>
+</div>
+</div>
+</section>
+<!-- Key Contacts -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+<h2 class="text-xl font-bold text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">groups</span> Key Contacts
+                        </h2>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<img alt="Sarah Jenkins" class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a female engineering executive" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7dL_CWjcdDYGUeCHQR29PHeBOcFQKBSmYJb0RP0nU09kpgoohnYvjBR2q6svpv2O_QLnrFWFLUHp7C1BUJsJCMsQHPd62YDwAMl8Rt-mAs7PNa4kco0dIGFnBmyIPCu1-jQughJQpTF_2D3p76dOPSD4vwwvymfEwefwc8O4uo5NYGI_COLRKpXHziG_wYwEzCB0qvCjppMqe859sl1jQH3elrv8WgHwMlAcc5e-J-zETNYe9vDiDDyK36r0bAqpqeJg8erl6SsL3"/>
+<div class="flex-1">
+<p class="text-sm font-bold">Sarah Jenkins</p>
+<p class="text-xs text-on-surface-variant">VP of Engineering</p>
+</div>
+<a class="text-primary hover:text-primary-container" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+</div>
+<div class="flex items-center gap-4">
+<img alt="Marcus Zhao" class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a professional male recruiter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3qM4kGb6Aey3xv7MmRnooCDDiwensB9dof0eqm0RV6rDaIWKM8F3Pwqj7HHwmpaHPhF9shoXvfQkoTlHKw5qtL9Rd7bD2VMvTK8Jb1JRcveNq2QXuC5c3nvKAEamoC5fhvoH3_GaZMJZe4sEIhUDiADGJR_auTCYGVbfS4a0VHKN5YSUooPplBNKwkopETGbTW9HgePqSYFrGdZdzyZM7h0zJSDUa_IXOt92r2hxWyowLEMGs8PefOKFUZ-36MPGekxNbDJieaNTo"/>
+<div class="flex-1">
+<p class="text-sm font-bold">Marcus Zhao</p>
+<p class="text-xs text-on-surface-variant">Senior Tech Recruiter</p>
+</div>
+<a class="text-primary hover:text-primary-container" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+</div>
+<div class="flex items-center gap-4">
+<img alt="David Miller" class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a friendly male product manager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHX6YKCiHinUhkjiLS_HykB8D-26DWGql3d33nkmgY6C-CyQWdfP_IQG6E4ocaKKZQvFlV9u4KpC5E8etajsLQn1Khe2Ozxt-cWwb_Uprf-OUaLQl9y2fG-8-gcJG80Lne-JqXZpv__4fGKyePLDdI4AdbTSf4ODxNtZkxbe8O8L2U6Q3cVl3zLOI8ExJyZ2XascnXNuAb_ppm9ZrHgi3EuAhIOWb_Uj_F_rv9N1wkNyL8O92-3ZF3YxmCttq93MTfH_3MllefWgrE"/>
+<div class="flex-1">
+<p class="text-sm font-bold">David Miller</p>
+<p class="text-xs text-on-surface-variant">Principal Product Manager</p>
+</div>
+<a class="text-primary hover:text-primary-container" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Engagement CTA -->
+<div class="bg-primary-container p-6 rounded-xl text-white">
+<p class="text-xs font-bold uppercase tracking-widest opacity-80 mb-2">Next Step Action</p>
+<p class="text-lg font-bold mb-4">Prepare Case Study on Scalability</p>
+<button class="w-full bg-tertiary-fixed text-on-tertiary-fixed py-3 rounded-lg font-bold text-xs uppercase tracking-widest hover:brightness-110 transition-all">
+                            Open Prep Document
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- SideNavBar (Hidden on desktop, mapped from JSON) -->
+<!-- Not rendering SideNavBar on this Detail View to prioritize the "Canvas" as per Suppression rules -->
+<!-- FAB (Suppressed on Details screen per suppression logic) -->
+</body></html>
